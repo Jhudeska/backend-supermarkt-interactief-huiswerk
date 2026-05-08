@@ -5,22 +5,22 @@ public class SuperMarket {
         Product fruit;
         Product cheese;
         Product toiletPaper;
+        int stock = 0;
 
-        public SuperMarket(Product bread, Product fruit, Product cheese, Product toiletPaper){
+    public SuperMarket(Product bread, Product fruit, Product cheese, Product toiletPaper){
             this.bread = bread;
             this.fruit = fruit;
             this.cheese = cheese;
             this.toiletPaper = toiletPaper;
-        }
+    }
 
     private void buyItem(Product product, int amount){
            if(amount <= product.amount) {
-            int resterendProducten = amount - product.amount;
+             stock = amount - product.amount;
             double totalAmount =  amount * product.price;
-            System.out.println( "You bought " + amount + " " + product.name + " for " + totalAmount +  " euro");
-//            System.out.println("Dit is het resterend bedrag " + resterendProducten);
+            System.out.println( "You bought " + amount + " " + product.name + " for " + totalAmount +  " euro.\n");
         }else {
-            System.out.println("You cannot buy " + amount + " " + product.name + ", we only have " + product.amount + " of " +  product.name + " in stock.");
+            System.out.println("You cannot buy " + amount + " " + product.name + ", we only have " + stock + " of " +  product.name + " in stock.\n");
         }
     }
 
@@ -36,7 +36,7 @@ public class SuperMarket {
         buyItem(this.cheese, amount);
     }
 
-    public void buyToilerPaper(int amount){
+    public void buyToiletPaper(int amount){
         buyItem(this.toiletPaper, amount);
     }
 
