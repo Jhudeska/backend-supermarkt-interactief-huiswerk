@@ -29,7 +29,7 @@ public class Customer {
 //                if(product == productName) {
 //                    supermarket.buyItem(product , amount);
                     return;
-            }
+//            }
        }
         // can also be an if statement
 //       switch (productName) {
