@@ -18,18 +18,29 @@ public class Customer {
    }
 
    public void  buyItem(String productName, int amount){
+
+        //validate is supermarket is null
         if(this.supermarket == null){
             System.out.println("Select a supermarket to go to first.\n");
             return;
         }
-
-        // can also be an if statement
-       switch (productName) {
-           case "bread" -> supermarket.buyBread(amount);
-           case "fruit" -> supermarket.buyFruit(amount);
-           case "cheese" -> supermarket.buyCheese(amount);
-           case "toiletpaper" -> supermarket.buyToiletPaper(amount);
-           default -> System.out.println("Sorry, we do not have this product in stock.\n");
+//TODO : producten vergeijken met lijst producten uit supermarket
+        for(Product product : supermarket.products){
+//                if(product == productName) {
+//                    supermarket.buyItem(product , amount);
+                    return;
+            }
        }
+        // can also be an if statement
+//       switch (productName) {
+//           case "bread" -> supermarket.buyBread(amount);
+//           case "fruit" -> supermarket.buyFruit(amount);
+//           case "cheese" -> supermarket.buyCheese(amount);
+//           case "toiletpaper" -> supermarket.buyToiletPaper(amount);
+//           default -> System.out.println("Sorry, we do not have this product in stock.\n");
+
+//       Als de loop klaar is en er is niks gevonden, dan printen we een berichtgeving als: "[supermarket] does not sell [product]"
+//
+//       Tip: gebruik equalsIgnoreCase om de namen hier te vergelijken
    }
 }

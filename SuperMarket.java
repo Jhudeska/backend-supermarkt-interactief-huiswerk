@@ -1,17 +1,20 @@
 package org.inthepresenceofadonai;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SuperMarket {
-        Product bread;
-        Product fruit;
-        Product cheese;
-        Product toiletPaper;
+
+        String name;
+        List<Product> products ;
         int stock = 0;
 
-    public SuperMarket(Product bread, Product fruit, Product cheese, Product toiletPaper){
-            this.bread = bread;
-            this.fruit = fruit;
-            this.cheese = cheese;
-            this.toiletPaper = toiletPaper;
+    public SuperMarket(String name, List<Product> products){
+            //Check on null pointer
+            if(products == null){
+                this.name = name;
+                products = new ArrayList<Product>();
+            }
     }
 
     private void buyItem(Product product, int amount){
@@ -24,23 +27,22 @@ public class SuperMarket {
         }
     }
 
-    public void buyBread(int amount) {
-        buyItem(this.bread, amount);
+
+    public void restockItem(Product productName, int amount){
+
+//TODO bouwen van restock function
+
+//        SuperMarket krijgt een extra functionaliteit, namelijk een restockItem methode.
+//
+//                Deze methode lijkt op Customer.buyItem. Het heeft dezelfde parameters (String productName en int amount).
+//        Het heeft ook een vergelijkbare for-loop (maar iets anders).
+//
+//                loop door Product products in this.products.
+//                Als product.name overeenkomt met productName
+//        Dan tellen we amount bij product.amount op en returnen we de methode.
+//                Eindig de for-loop met een return wanneer het item ge-restocked is. Als restock niet lukt, omdat deze supermarkt dit item niet in de productenlijst heeft staan bijvoorbeeld, print daar dan een berichtje voor.
+
     }
-
-    public void buyFruit(int amount){
-        buyItem(this.fruit, amount);
-    }
-
-    public void buyCheese(int amount){
-        buyItem(this.cheese, amount);
-    }
-
-    public void buyToiletPaper(int amount){
-        buyItem(this.toiletPaper, amount);
-    }
-
-
 
 
 }
